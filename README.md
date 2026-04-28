@@ -77,4 +77,6 @@ fetch("YOUR_GOOGLE_SCRIPT_URL", {
 
 ## 📸 Screenshots
 
-![Homepage](images/screenshot1.png)
+## 📸 Preview
+
+![Landing Page Screenshot](screenshot.png)
