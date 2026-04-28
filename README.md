@@ -68,7 +68,7 @@ fetch("YOUR_GOOGLE_SCRIPT_URL", {
 - SEO optimization
 - Performance optimization
 
-##👩‍💻 Author
+## 👩‍💻 Author
 
 **Mrunali Mohite**
 
