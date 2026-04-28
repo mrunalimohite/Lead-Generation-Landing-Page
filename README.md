@@ -75,8 +75,6 @@ fetch("YOUR_GOOGLE_SCRIPT_URL", {
 **GitHub:** https://github.com/mrunalimohite
 **LinkedIn:** https://www.linkedin.com/in/mrunali-mohite
 
-## 📸 Screenshots
-
 ## 📸 Preview
 
 ![Landing Page Screenshot](Screenshot.png)
