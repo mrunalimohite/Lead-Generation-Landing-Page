@@ -89,25 +89,70 @@ window.addEventListener("scroll", reveal);
 // Run once on load to catch elements already in view
 reveal();
 
-// contact from 
+
+// DELETE the first form section and replace with this fixed version
+// const form = document.getElementById("inquire-form");
+
+// form.addEventListener("submit", function(e) {
+//     e.preventDefault();
+
+//     const data = {
+//         name: document.getElementById("name").value,
+//         email: document.getElementById("email").value,
+//         phone: document.getElementById("phone").value,
+//         // FIX: The ID in HTML is 'businessType', not 'BusinessType'
+//         businessType: document.getElementById("businessType").value, 
+//         monthlyBudget: document.getElementById("monthlyBudget").value,
+//         message: document.getElementById("message").value
+//     };
+
+//     fetch("https://script.google.com/macros/s/AKfycbzhSuEbcULiRMbCic6PEZ9toFbf2thHvmnIhQTI0KbB3t57cb83oBjfxxqLZvhbwUq_/exec", {
+//         method: "POST",
+//         body: JSON.stringify(data)
+//     })
+//     .then(() => {
+//         alert("✅ We will contact you soon!");
+//         form.reset();
+//     })
+//     .catch(err => alert("Error: " + err));
+// });
+// Ensure this appears only ONCE in your script.js
 const form = document.getElementById("inquire-form");
 
-form.addEventListener("submit", function(e){
-    e.preventDefault();
+if (form) {
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
 
-    const data = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        businessType: document.getElementById("BusinessType").value,
-        monthlyBudget: document.getElementById("monthlyBudget").value,
-        message: document.getElementById("message").value
-    };
+        const submitBtn = form.querySelector("button");
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = "<span>Sending...</span>";
+        submitBtn.disabled = true;
 
-    fetch("YOUR_GOOGLE_SCRIPT_URL", {
-        method: "POST",
-        body: JSON.stringify(data)
-    })
-    .then(res => alert("✅ We will contact You soon!"))
-    .catch(err => alert("Error"));
-});
+        const data = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            businessType: document.getElementById("businessType").value, 
+            monthlyBudget: document.getElementById("monthlyBudget").value,
+            message: document.getElementById("message").value
+        };
+
+        fetch("https://script.google.com/macros/s/AKfycbzhSuEbcULiRMbCic6PEZ9toFbf2thHvmnIhQTI0KbB3t57cb83oBjfxxqLZvhbwUq_/exec", {
+            method: "POST",
+            mode: "no-cors", // Add this to prevent browser security blocks
+            body: JSON.stringify(data)
+        })
+        .then(() => {
+            alert("✅ We will contact you soon!");
+            form.reset();
+        })
+        .catch(err => {
+            console.error("Error:", err);
+            alert("Submission failed. Check console for details.");
+        })
+        .finally(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        });
+    });
+}
