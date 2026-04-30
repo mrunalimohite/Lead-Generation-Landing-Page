@@ -31,7 +31,7 @@
     <!-- Home section -->
     <section class="home-section" id="home">
         <div class="home-container">
-            <h1>Get High-Quality Leads for Your Business Every Month</h1>
+            <h1>Get <span>High-Quality Leads </span> for<span> Your Business</span> Every Month</h1>
             <p>We help local businesses generate consistent leads using proven Meta & Google Ads strategies —starting at an affordable cost</p>
             <div class="cta-btns">
                 <a href="#contact" class="cta-call">Get Free Strategy Call </a>
@@ -232,7 +232,7 @@
                         <option value="50000+">₹50,000+</option>
                     </select>
                     <textarea rows="5" name="message" id="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" name="submit" class="btn-primary"><span>Get My Free Consultant</span></button>
+                    <button type="submit" name="submit" class="btn-primary"><span>Book Free Consultant</span></button>
                 </form>
             </div>
         </div>
@@ -254,9 +254,130 @@
             </p>
         </div>
     </footer>
+    <!-- scroll on top button  -->
     <button id="scrollToTop" class="scroll-btn" title="Go to top">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
+    <!--  Popup  -->
+    <!-- <div id="videoModal" class="custom-modal">
+        <div class="modal-wrapper video-wrapper">
+            <span class="close-trigger" onclick="closeVideo()">&times;</span>
+            <div class="modal-body">
+                <div class="video-container">
+                    <iframe id="shortsFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div id="videoModal" class="custom-modal">
+    <div class="modal-wrapper video-wrapper">
+        <span class="close-trigger" onclick="closeVideo()">&times;</span>
+        <div class="modal-body">
+            <div class="video-container">
+                <iframe 
+                    id="shortsFrame" 
+                    src="" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</div> -->
+    <style>
+    /* Popup container background */
+    #videoPopup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+    
+    /* Popup box */
+    .video-container {
+        position: relative;
+        background: #1d1b1b;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 50%;
+        max-width: 700px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    
+    /* Video Size */
+    .video-container iframe,
+    .video-container video {
+        width: 100%;
+        height: 500px;
+        display: block;
+    }
+    
+    /* Close button */
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: #ff4444;
+        color: white;
+        font-size: 18px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        padding: 5px 10px;
+        z-index: 2;
+    }
+    </style>
+
+    <div id="videoPopup">
+    <div class="video-container">
+        <button class="close-btn" onclick="closeVideo()">x</button>
+        
+        <!-- Use your video here -->
+        <!-- Example for YouTube embed -->
+        <!-- Replace the src URL with your YouTube or MP4 link -->
+        <!-- <iframe 
+        src="https://youtu.be/ZucOiqzRznA?si=AT_LcV1pUWkEx1MK"
+        title="Digital Marketing Video"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+        </iframe> -->
+        
+        OR for a local MP4 file
+        
+        <video controls autoplay muted loop>
+        <source src="/lead-generation.mp4" type="video/mp4">
+        </video>
+    
+    </div>
+    </div>
+
+   <script>
+        // Show popup automatically after 5 seconds
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+            document.getElementById("videoPopup").style.display = "flex";
+            }, 2000); // 2000ms = 2 seconds
+        });
+
+        // Close button function
+        function closeVideo() {
+            const popup = document.getElementById("videoPopup");
+            popup.style.display = "none";
+            const iframe = popup.querySelector("iframe");
+            if (iframe) {
+            iframe.src = iframe.src; // stop video playback
+            }
+        }
+    </script>
     <!-- Script -->
     <script src="script.js"></script>
 </body>
