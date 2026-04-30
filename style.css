@@ -125,9 +125,13 @@ section{
 .home-container h1{
     font-size: 4rem;
     color: #fff;
-    /* max-width: 600px; */
+    /* max-width: 900px; */
     /* line-height: 1.4; */
     font-weight: 900;
+}
+.home-container h1 span{
+    /* background: linear-gradient(90deg, #FF8C00, #FFD700, #FF4500); */
+    color: #f06529;
 }
 .home-container p{
     font-size: 1.6rem;
@@ -849,6 +853,7 @@ h2 span{
 .highlight {
     animation: pulse-glow 2s infinite;
 }
+
 /* === Media Queries ===*/
 @media (max-width: 1090px){
     html{
@@ -941,7 +946,7 @@ h2 span{
     .cta-btns a{
         width: 100%;
         max-width: 300px;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         padding: 1.2rem;
     }
     /* Business Solutions Section */
@@ -963,8 +968,8 @@ h2 span{
     .final-business-cta h2 { font-size: 2.8rem; }
     .cta-actions { flex-direction: column; align-items: center; }
     .btn-main-cta, .btn-sub-cta { width: 100%; max-width: 350px; }
-    /* Contact form*/
     
+    /* Contact form*/
     .contact-container {
         display: flex; /* Flex is more reliable for simple vertical stacks */
         flex-direction: column;
@@ -983,10 +988,9 @@ h2 span{
     .text-box {
         max-width: 100%;
     }
-    
-    /* .info-item {
-        justify-content: flex-start; 
-    } */
+    .btn-primary{
+        font-size: 1.4rem;
+    }
     /* Footer section */
     .footer-content{
         flex-direction: column;
@@ -1007,6 +1011,7 @@ h2 span{
         font-weight: 500;
     }
 }
+
 @media (max-width: 600px) {
     .offer-container ul li {
         flex-direction: column; /* Stacks label on top of text on tiny screens */
