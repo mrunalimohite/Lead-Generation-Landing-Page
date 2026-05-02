@@ -53,11 +53,11 @@ A modern and responsive **Lead Generation Landing Page** designed for digital ma
 
 ## Open the project folder:
 
-- cd lead-generation-landing-page
-- Run the project:
-- Open index.html in your browser
+   - cd lead-generation-landing-page
+   - Run the project:
+   - Open index.html in your browser
 
-##📌 Important Note
+## 📌 Important Note
 ⚠️ Update this line in script.js with your Google Apps Script URL:
 
 fetch("YOUR_GOOGLE_SCRIPT_URL", {
