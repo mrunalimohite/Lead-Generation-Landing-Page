@@ -28,12 +28,14 @@ A modern and responsive **Lead Generation Landing Page** designed for digital ma
 
 
 ## 📂 Project Structure
-📁 project-folder
+
+```id="1a2b3c"
+📁 Lead_generation 
 │── index.html
 │── style.css
 │── script.js
-│── images/
 
+```
 
 ## ⚙️ How It Works
 
